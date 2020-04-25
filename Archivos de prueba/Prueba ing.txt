@@ -1,0 +1,69 @@
+
+
+TOKENS       
+          LETRA   { 'A'..'Z'+'a'..'z'+'_' } 
+     DIGITO  { '0'..'9' } 
+     CHARSET { CHR(32)..CHR(254) }
+
+	 TOKEN 1= ("A"|"B"*)("A""B""C")|("B"*("C"|"D"))  
+     TOKEN 2='"' CHARSET '"'|'"' CHARSET '"'                      
+
+     TOKEN 3= LETRA ( LETRA | DIGITO )*   [ RESERVADAS() ]        
+	 TOKEN  4  = '='
+     TOKEN  5  = '<''>'
+     TOKEN  6  = '<'
+     TOKEN  7  = '>'
+     TOKEN  8  = '>''='
+     TOKEN  9  = '<''='       
+     TOKEN  10  = '+'
+     TOKEN  11  = '-'
+     TOKEN  12  = 'O''R'                     
+     TOKEN  13  = '*'
+     TOKEN  14  = 'A''N''D'
+     TOKEN  15  = 'M''O''D'
+     TOKEN  16  = 'D''I''V'            
+     TOKEN  17  = 'N''O''T'                        
+     TOKEN  22  = '(''*'  
+     TOKEN  23  = '*'')' 
+     TOKEN  24  = ';'
+     TOKEN  25  = '.'
+     TOKEN  26  = '['
+     TOKEN  27  = '}'
+     TOKEN  28  = '('
+     TOKEN  29  = ')'
+     TOKEN  30  = 'T''Y''P''E'
+     TOKEN  31  = 'A''R''R''A''Y'
+     TOKEN  32  = ']'
+     TOKEN  33  = 'O''F'
+     TOKEN  34  = '.''.'
+     TOKEN  35  = 'R''E''C''O''R''D'
+     TOKEN  36  = ':'
+     TOKEN  37  = ','
+     TOKEN  38  = 'V''A''R'
+     TOKEN  39  = 'P''R''O''C''E''D''U''R''E'
+     TOKEN  40  = 'F''U''N''C''T''I''O''N'
+     TOKEN  41  = 'I''N''C''L''U''D''E'
+     TOKEN  42  = 'E''X''I''T'
+     TOKEN  43  = 'W''H''I''L''E'
+     TOKEN  44  = 'F''O''R'
+     TOKEN  45  = ':''='
+     TOKEN  46  = 'I''F'
+     TOKEN  47  = 'T''H''E''N'
+     TOKEN  48  = 'E''L''S''E'
+     TOKEN  49  = 'C''A''S''E'
+     TOKEN  50  = 'D''O'
+     TOKEN  51  = 'B''R''E''A''K'
+     TOKEN  52  = 'T''O'
+     TOKEN  53  = 'D''O''W''N''T''O'
+    
+
+ACciones
+RESERVADAS()
+{
+     18 = 'PROGRAM'
+     19 = 'CONST'
+     20 = 'BEGIN'
+     21 = 'END'
+}
+
+ERROR = 54

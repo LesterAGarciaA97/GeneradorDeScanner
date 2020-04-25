@@ -1,0 +1,33 @@
+SETS 
+	LETRA   = 'A'..'Z'+'a'..'z'+'_'  
+	DIGTO  = '0'..'9'  
+	CHARSET = CHR(32)..CHR(254) 
+TOKENS
+	TOKENS 1= DIGITO  DIGITO *
+	TOKENS 2='"' CHARSET '"'|''' CHARSET '''                       
+	TOKENS 4  = '=' 
+	TOKENS  5  = '<''>' 
+	TOKENS  6  = '<'
+	TOkENS   7  = '>'
+	TOKENS  8  = '>''='
+	TOKENS  9  = '<''='
+	TOKENS  10  = '+' 
+	TOKENS  11  = '-' 
+	TOKENS  12  = 'O''R' 
+	TOKENS  13  = '*' 
+	TOKENS  14  = 'A''N''D'
+	TOKENS  15  = 'M''O''D'
+	TOKENS  16  = 'D''I''V'             
+	TOKENS 3= LETRA ( LETRA | DIGITO )*  
+ 
+ACTIONS
+	RESERVADAS() 
+	{
+		18 = 'PROGRAM'
+		19 = 'INCLUDE'
+		20 = 'CONST'
+		21 = 'TYPE' 
+		22 = 'VAR' 
+	} 
+ 
+ERROR = 54 

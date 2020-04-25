@@ -1,0 +1,21 @@
+
+
+TOKENS       
+          LETRA   { 'A'..'Z'+'a'..'z'+'_' } 
+     DIGITO  { '0'..'9' } 
+     CHARSET { CHR(32)..CHR(254) }
+
+	 TOKEN 1= ("A"|"B"*)("A""B""C")|("B"*("C"|"D")) [ RESERVADAS() ] 
+     
+    
+
+ACciones
+RESERVADAS()
+{
+     18 = 'PROGRAM'
+     19 = 'CONST'
+     20 = 'BEGIN'
+     21 = 'END'
+}
+
+ERROR = 54
